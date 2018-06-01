@@ -10,7 +10,7 @@ pageEncoding="UTF-8"%>
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<title>UserCreate画面</title>
+<title>UserCreateConfirm画面</title>
 <style type="text/css">
 
 body{
@@ -58,54 +58,54 @@ table{
 </style>
 </head>
 <body>
+
 	<div id="header">
 		<div id="pr">
 		</div>
 	</div>
-	<div id="main">
-	<div id="top">
-		<p>UserCreate</p>
-	</div>
-	<div>
-		<s:if test="errorMessage != ''">
-			<s:property value="errorMessage" escape="false"/>
-		</s:if>
-		<table>
-		<s:form action="UserCreateConfirmAction">
-		<tr>
-			<td>
-				<label>ログインID:</label>
-			</td>
-			<td>
-				<input type="text" name="loginUserId" value=""/>
-			</td>
-		</tr>
 
-		<tr>
-			<td>
-				<label>ログインPASS</label>
-			</td>
-			<td>
-				<input type="text" name="loginPassword" value=""/>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label>ユーザー名:</label>
-			</td>
-			<td>
-				<input type="text" name="userName" value=""/>
-			</td>
-		<tr>
-		<s:submit value="登録"/>
-		</s:form>
-	</table>
-	<div>
-		<span>前画面に戻る場合は</span>
-		<a href='<s:url action="HomeAction"/>'>こちら</a>
+	<div id="main">
+		<div id="top">
+			<p>UserCreateConfirm</p>
+		</div>
+		<div>
+			<h3>登録する内容は以下でよろしいでしょうか。</h3>
+			<table>
+				<s:form action="UserCreateCompleteAction">
+				<tr id="box">
+					<td>
+						<label>ログインID:</label>
+					</td>
+					<td>
+						<s:property value="loginUserId" escape="false"/>
+					</td>
+				</tr>
+				<tr id="box">
+					<td>
+						<label>ログインPASS:</label>
+					</td>
+					<td>
+						<s:property value="loginPassword" escape="false"/>
+					</td>
+				</tr>
+				<tr id="box">
+					<td>
+						<label>ユーザー名:</label>
+					</td>
+					<td>
+						<s:property value="userName" escape="false"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<s:submit value="完了"/>
+					</td>
+				</s:form>
+			</table>
+
+		</div>
 	</div>
-	</div>
-	</div>
+
 	<div id="footer">
 		<div id="pr">
 		</div>
